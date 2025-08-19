@@ -1,0 +1,60 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 60
+    },
+    "auditLog": "E:\\ria_money_backend\\logs\\2025\\08\\.0bf775495e08993a238b5155597c352b9d994cc6-audit.json",
+    "files": [
+        {
+            "date": 1755162791553,
+            "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-14-15.log",
+            "hash": "d975e37043759ed8abc287611b7a8d7c55a51b823ef71e95e21f0ef9a8075c2e"
+        },
+        {
+            "date": 1755166784606,
+            "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-14-16.log",
+            "hash": "b5d27690c584735630916c3de83886cb7e2c10efb8cf7b6cbacb6444948f0841"
+        },
+        {
+            "date": 1755417549871,
+            "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-17-13.log",
+            "hash": "61f30efec6b178d883bc4ebb0106e8ccbc904bcc3040fe399310da4325bddcc5"
+        },
+        {
+            "date": 1755417617300,
+            "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-17-14.log",
+            "hash": "854b6088ce6f349893c37eab39d3098d57184bf4c92d6641d47fca25dd1df4a8"
+        },
+        {
+            "date": 1755422339842,
+            "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-17-15.log",
+            "hash": "e32e6800fd0f1b88f0558b5c25ed0f8ee862e674c15e38166db8303a16ef13ec"
+        },
+        {
+            "date": 1755426056024,
+            "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-17-16.log",
+            "hash": "a85129ce6ca919c73ee7b049774521c6ef7dcc7fdcb3e4607085b3c2dd7e362a"
+        },
+        {
+            "date": 1755522465675,
+            "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-18-19.log",
+            "hash": "965afef73371f35d4133b81816dc5780eb79dade97ce3bb1639d38e59ff10d4f"
+        },
+        {
+            "date": 1755580886893,
+            "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-19-11.log",
+            "hash": "1c91bc680af28b025671f71b0bc9222eea8e484b567694856ed2c90cdbe7fd1c"
+        },
+        {
+            "date": 1755584658354,
+            "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-19-12.log",
+            "hash": "3e991e822f0eb71f3806b2a8e2036b3d69197191282ab50bc947bdb0ee3772b2"
+        },
+        {
+            "date": 1755590594499,
+            "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-19-14.log",
+            "hash": "aa899cd6a2c3794b37216831168caa48ebf242964d600bd686eb6e0d66b0f55e"
+        }
+    ],
+    "hashType": "sha256"
+}
