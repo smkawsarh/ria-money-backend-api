@@ -38,9 +38,9 @@ function encryptRSA(plainText) {
 function decryptRSA(base64Text) {
   try {
     const buffer = Buffer.from(base64Text, "base64");
-    const decrypted = crypto.privateDecrypt(
+    const decrypted = crypto.publicDecrypt(
       {
-        key: encryption.privateKey,
+        key: encryption.riaPublicKey,
         padding: crypto.constants.RSA_PKCS1_PADDING
       },
       buffer

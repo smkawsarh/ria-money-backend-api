@@ -24,7 +24,7 @@ module.exports = {
     const randomNum = Math.floor(Math.random() * 10000)
       .toString()
       .padStart(4, "0");
-      
+
     const requestRefNo =
       now.getFullYear().toString() +
       String(now.getMonth() + 1).padStart(2, "0") +
@@ -42,10 +42,10 @@ module.exports = {
 
     console.log(requestTimeStamp);
 
-    const requestData = {
-      function: input.function,
-      mobile: input.mobile,
-    };
+    // const requestData = {
+    //   function: input.function,
+    //   mobile: input.mobile,
+    // };
 
     const requestPayload = {
       partitionId,
@@ -53,56 +53,32 @@ module.exports = {
       channelPassword,
       requestRefNo,
       requestTimeStamp,
-      requestType: "FETCHCRDDT",
-      requestData: base64Encode(JSON.stringify(requestData)),
+      requestType: "FETCHCARDDT",
+      requestData: `{'function':'${input.function}', 'mobile':'${input.mobile}'}`,
+      clientCombinationKey: "",
+      serverCombinationKey: "",
     };
     logger.info(`Request-Payload: ${safeStringify(requestPayload)}`);
 
     try {
-      // const httpsAgent = encryption.clientCertificate
-      //   ? new https.Agent({
-      //       cert: encryption.clientCertificate,
-      //       rejectUnauthorized: true,
-      //       keepAlive: true,
-      //     })
-      //   : undefined;
-      // const response = await axios.post(stagingUrl, requestPayload, {
-      //   timeout: 30000,
-      //   ...(httpsAgent && { httpsAgent }),
-      //   headers: {
-      //     "Content-Type": "application/json",
-      //     Accept: "application/json",
-      //   },
-      // });
       const response = await axios.post(stagingUrl, requestPayload, {
         timeout: 30000,
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
       });
       const resp = response.data;
       logger.info(`Fetch wallet api Response Data: ${safeStringify(resp)}`);
 
       if (resp.responseCode === "000") {
-        const decoded = JSON.parse(base64Decode(resp.responseData));
-
-        if (decoded.firstName)
-          decoded.firstName = decryptRSA(decoded.firstName);
-        if (decoded.middleName)
-          decoded.middleName = decryptRSA(decoded.middleName);
-        if (decoded.lastName) decoded.lastName = decryptRSA(decoded.lastName);
-
+        const decoded = resp.responseData;
         return {
           is_success: true,
-          code: httpCodes.OK.code,
+          code: resp.responseCode,
           response_message: resp.responseMsg,
           response_data: decoded,
         };
       } else {
         return {
           is_success: false,
-          code: httpCodes.EXPECTATION_FAILED.code,
+          code: resp.responseCode,
           response_message: resp.responseMsg,
           response_data: resp,
         };

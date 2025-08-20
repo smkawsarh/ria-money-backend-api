@@ -54,6 +54,26 @@
             "date": 1755590594499,
             "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-19-14.log",
             "hash": "aa899cd6a2c3794b37216831168caa48ebf242964d600bd686eb6e0d66b0f55e"
+        },
+        {
+            "date": 1755598281397,
+            "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-19-16.log",
+            "hash": "bcbcdf113154671ed1884058cdf95be161f79e20d98d57ce607e86b9eebd65b6"
+        },
+        {
+            "date": 1755601634098,
+            "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-19-17.log",
+            "hash": "3898fb78aafcb79610de1c29ecd3115a43535d26840c95c4830ccec36aee1f69"
+        },
+        {
+            "date": 1755664844709,
+            "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-20-10.log",
+            "hash": "97a5078707bc175342c4d8613cf59ee1fda01a4890fe750aaee85dcd64da7b5f"
+        },
+        {
+            "date": 1755667175018,
+            "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-20-11.log",
+            "hash": "046483b6ffa9b9981c95c6b8d07f2d464e60ff274f19eb825212f1d8de7d6821"
         }
     ],
     "hashType": "sha256"
