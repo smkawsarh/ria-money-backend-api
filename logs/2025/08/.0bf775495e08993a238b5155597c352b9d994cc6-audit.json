@@ -74,6 +74,46 @@
             "date": 1755667175018,
             "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-20-11.log",
             "hash": "046483b6ffa9b9981c95c6b8d07f2d464e60ff274f19eb825212f1d8de7d6821"
+        },
+        {
+            "date": 1755674522061,
+            "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-20-13.log",
+            "hash": "1b3c2ba985131f07bd25883b5a00c6d5b381d08d371365b16cfae812732aacad"
+        },
+        {
+            "date": 1755684209329,
+            "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-20-16.log",
+            "hash": "355a55b98e6d112b399086490ebf979678ab2eb40c080f5e9b0bf8a791581841"
+        },
+        {
+            "date": 1755770310305,
+            "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-21-15.log",
+            "hash": "6e4d9b94dd7f9ccae0d0583c410c51556c672e37885b18767f786fa0484496e1"
+        },
+        {
+            "date": 1756017914213,
+            "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-24-12.log",
+            "hash": "17d28e3f9176a897b0a4102dec9fdd35aaa107865cffc2ebb38a147a55ca7d1e"
+        },
+        {
+            "date": 1756018882714,
+            "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-24-13.log",
+            "hash": "949642f5b12906a5061c291405a19161a0e8f2162bd3b07966af79116f5f0cca"
+        },
+        {
+            "date": 1756030019883,
+            "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-24-16.log",
+            "hash": "713cc0b048b3fa1b0e12aa578e5d8c1e8643549adb8ebd62b61bfe4ccde1fcf9"
+        },
+        {
+            "date": 1756033212303,
+            "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-24-17.log",
+            "hash": "1264706202757fbc7007982d4d3d3fb07e872c054513538544965b888001019a"
+        },
+        {
+            "date": 1756037937323,
+            "name": "E:\\ria_money_backend\\logs\\2025\\08\\app-2025-08-24-18.log",
+            "hash": "be88ce4a5dac6094f7e1703b88b2cf732722e1ab2a5957dde6b72e486c8e7042"
         }
     ],
     "hashType": "sha256"

@@ -21,7 +21,7 @@ const riaPublicKey = fs.readFileSync("public/publickey.key", "utf8");
 const riaprivateKey = fs.readFileSync("public/certificate.crt", "utf8");
 
 module.exports = {
-  async fetchWalletDetails(input) {
+  async cashInRequest(input) {
     const now = new Date();
     const randomNum = Math.floor(Math.random() * 10000)
       .toString()
@@ -44,11 +44,21 @@ module.exports = {
 
     console.log(requestTimeStamp);
 
-    const rawRequestData = `{'function':'${input.function}', 'mobile':'${input.mobile}'}`;
-    // const rawRequestData = JSON.stringify({
-    //   function: input.function,
-    //   mobile: input.mobile,
-    // });
+    // const rawRequestData = `{'function':'${input.function}', 'mobile':'${input.mobile}'}`;
+    const rawRequestData = JSON.stringify({
+      function: input.function,
+      txnAmt: input.txnAmt,
+      txnCurr:input.txnCurr,
+      billAmt:input.billAmt,
+      billCurr:input.billCurr,
+      txnToBillCurrRate: input.txnToBillCurrRate,
+      toProxyNumber:input.toProxyNumber,
+      proxyNumber: input.proxyNumber,
+      txnAction:'A',
+      txnPin:input.txnPin,
+      Country:input.Country,
+      custID:input.custID
+    });
     const encodedRequestData = base64Encode(rawRequestData);
 
     console.log("Raw Request Data:", rawRequestData);
@@ -62,7 +72,7 @@ module.exports = {
       channelPassword,
       requestRefNo,
       requestTimeStamp,
-      requestType: "FETCHCARDDT",
+      requestType: "CRDTOCRDTXR",
       requestData: encodedRequestData,
       clientCombinationKey: "",
       serverCombinationKey: "",

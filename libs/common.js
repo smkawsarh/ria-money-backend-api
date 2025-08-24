@@ -1,6 +1,45 @@
 "use strict";
 const crypto = require("crypto");
-const { encryption } = require("../config/config.third.party");
+
+function encryptRSA(data, publicKey) {
+  try {
+    const buffer = Buffer.from(data, "utf8");
+    const encrypted = crypto.publicEncrypt(
+      {
+        key: publicKey,
+        padding: crypto.constants.RSA_PKCS1_PADDING,
+      },
+      buffer
+    );
+    return encrypted.toString("base64");
+  } catch (error) {
+    throw new Error(`RSA encryption failed: ${error.message}`);
+  }
+}
+
+function decryptRSA(encryptedData, privateKey) {
+  try {
+    const buffer = Buffer.from(encryptedData, "base64");
+    const decrypted = crypto.privateDecrypt(
+      {
+        key: privateKey,
+        padding: crypto.constants.RSA_PKCS1_PADDING,
+      },
+      buffer
+    );
+    return decrypted.toString("utf8");
+  } catch (error) {
+    throw new Error(`RSA decryption failed: ${error.message}`);
+  }
+}
+
+function base64Encode(decodedData) {
+  return Buffer.from(decodedData, 'utf8').toString('base64');
+}
+
+function base64Decode(encodedData) {
+  return Buffer.from(encodedData, "base64").toString("utf8");
+}
 
 const safeStringify = (obj, replacer = null) => {
   let cache = [];
@@ -18,51 +57,10 @@ const safeStringify = (obj, replacer = null) => {
   return json;
 };
 
-
-function encryptRSA(plainText) {
-  try {
-    const buffer = Buffer.from(plainText, "utf8");
-    const encrypted = crypto.publicEncrypt(
-      {
-        key: encryption.riaPublicKey,
-        padding: crypto.constants.RSA_PKCS1_PADDING
-      },
-      buffer
-    );
-    return encrypted.toString("base64");
-  } catch (err) {
-    throw new Error("RSA Encryption failed: " + err.message);
-  }
-}
-
-function decryptRSA(base64Text) {
-  try {
-    const buffer = Buffer.from(base64Text, "base64");
-    const decrypted = crypto.publicDecrypt(
-      {
-        key: encryption.riaPublicKey,
-        padding: crypto.constants.RSA_PKCS1_PADDING
-      },
-      buffer
-    );
-    return decrypted.toString("utf8");
-  } catch (err) {
-    throw new Error("RSA Decryption failed: " + err.message);
-  }
-}
-
-function base64Encode(data) {
-  return Buffer.from(data, "utf8").toString("base64");
-}
-
-function base64Decode(data) {
-  return Buffer.from(data, "base64").toString("utf8");
-}
-
 module.exports = {
   safeStringify,
   encryptRSA,
   decryptRSA,
   base64Encode,
-  base64Decode
+  base64Decode,
 };
